@@ -13,11 +13,11 @@ socket.on('delivered', (payload) => {
   socket.emit('received', payload);
 });
 
-socket.on('orderQueue', (payload) => {
+socket.on('currentOrders', (payload) => {
   orders = payload;
 });
 
-socket.emit('getAll', vendor);
+socket.emit('getAll', 'candy-shop');
 
 setInterval(() => {
   if (orders.length > 0) {
@@ -25,4 +25,4 @@ setInterval(() => {
     console.log(`Thank you for delivering order ${order.orderId}`);
     socket.emit('received', order);
   }
-}, 3000);
+}, 2500);

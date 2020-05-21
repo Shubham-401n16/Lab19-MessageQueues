@@ -16,7 +16,7 @@ socket.on('orderQueue', (payload) => {
   orders = payload;
 });
 
-socket.emit('getAll', vendor);
+socket.emit('getAll', 'flower-shop');
 
 setInterval(() => {
   if (orders.length > 0) {

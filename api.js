@@ -21,7 +21,7 @@ app.post('/delivery/:vendor/:orderId', (req, res, next) => {
       orderId: req.params.orderId,
     };
     console.log('delivery', payload);
-    if (!(payload.vendor === 'flower' || payload.vendor === 'candy')) {
+    if (!(payload.vendor === 'flower-shop' || payload.vendor === 'candy-shop')) {
         res.status(400);
         res.send('Incorrect order type');
     } else {
